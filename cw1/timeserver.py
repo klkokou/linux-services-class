@@ -13,6 +13,7 @@ def get_datetime_str(now:datetime):
 
 
 sock=socket.socket(socket.AF_INET, socket.SOCK_STREAM, socket.IPPROTO_TCP)
+sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 print("Socket was created")
 port = 1303
 sock.bind(('0.0.0.0', port))
